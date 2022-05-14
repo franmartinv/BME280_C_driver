@@ -6,6 +6,33 @@
 extern "C" {
 #endif
 
+typedef struct {
+	// coeficientes calibracion temperatura
+	uint16_t		BMP280_dig_T1;
+	int16_t			BMP280_dig_T2;
+	int16_t			BMP280_dig_T3;
+
+	// coeficientes calibracion presion
+	uint16_t		BMP280_dig_P1;
+	int16_t			BMP280_dig_P2;
+	int16_t			BMP280_dig_P3;
+	int16_t			BMP280_dig_P4;
+	int16_t			BMP280_dig_P5;
+	int16_t			BMP280_dig_P6;
+	int16_t			BMP280_dig_P7;
+	int16_t			BMP280_dig_P8;
+	int16_t			BMP280_dig_P9;
+
+	// coeficientes calibracion humedad
+	uint8_t			BMP280_dig_H1;
+	int16_t			BMP280_dig_H2;
+	uint8_t			BMP280_dig_H3;
+	int16_t			BMP280_dig_H4;
+	int16_t			BMP280_dig_H5;
+	int8_t			BMP280_dig_H6;
+} BMP280_calib_t;
+
+
 // ***************************************************
 
 esp_err_t 	BMP280_read(uint8_t * buffer_out, uint8_t BMP280_command, unsigned size);
@@ -96,33 +123,6 @@ int32_t		BMP280_int_temperature_compensation(int32_t adc_tempe, BMP280_calib_t *
 #define		BMP280_set_filter_coef_4		0x02	// (010)
 #define		BMP280_set_filter_coef_8		0x03	// (011)
 #define		BMP280_set_filter_coef_16		0x04	// (100)
-
-
-typedef struct {
-	// coeficientes calibracion temperatura
-	uint16_t		BMP280_dig_T1;
-	int16_t			BMP280_dig_T2;
-	int16_t			BMP280_dig_T3;
-
-	// coeficientes calibracion presion
-	uint16_t		BMP280_dig_P1;
-	int16_t			BMP280_dig_P2;
-	int16_t			BMP280_dig_P3;
-	int16_t			BMP280_dig_P4;
-	int16_t			BMP280_dig_P5;
-	int16_t			BMP280_dig_P6;
-	int16_t			BMP280_dig_P7;
-	int16_t			BMP280_dig_P8;
-	int16_t			BMP280_dig_P9;
-
-	// coeficientes calibracion humedad
-	uint8_t			BMP280_dig_H1;
-	int16_t			BMP280_dig_H2;
-	uint8_t			BMP280_dig_H3;
-	int16_t			BMP280_dig_H4;
-	int16_t			BMP280_dig_H5;
-	int8_t			BMP280_dig_H6;
-} BMP280_calib_t;
 
 
 
