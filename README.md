@@ -1,4 +1,4 @@
-# MS5611 sensor API
+# BME280 sensor API
 ## Author
 Name:			Francisco Martín Villegas
 
