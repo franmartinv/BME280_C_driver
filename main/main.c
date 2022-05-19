@@ -20,8 +20,8 @@ void hal_i2c_init();
 void app_main(void)
 {
 	BMP280_calib_t		NVM_coef;
-	float				temperature, pressure, humidity;
-	int					sensor;
+	float			temperature, pressure, humidity;
+	int			sensor;
 
 	sensor = 0;		// 1 if BME280; 0 if BMP280
 
